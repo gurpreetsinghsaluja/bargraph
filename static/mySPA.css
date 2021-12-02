@@ -1,0 +1,56 @@
+
+h1{
+    font-family: 'Tangerine', cursive;
+    /* Tangerine font reference: https://fonts.google.com/specimen/Tangerine */
+    text-shadow: 4px 4px 4px #aaa;
+    color:rgb(75, 0, 130);
+  }
+  span{
+    color: rgb(0, 3, 55);
+  }
+  img:hover {
+    transform: rotate(360deg);
+  }
+  img {
+    transition: transform 2s ease-in-out;
+  }
+  .bar:hover{
+      fill:blue;
+  }
+  body{
+      background-color: rgb(211, 221, 255);
+  }
+  polygon{
+      fill:rgb(74, 110, 255);
+      stroke:purple;
+      stroke-width:5;
+  }
+  .image {
+      border-radius: 40px;
+  }
+  .button {
+      padding: 5px 5px;
+      font-size: 25px;
+      text-align: center;
+      color: white;
+      background-image: linear-gradient(to right, blue, rgb(0, 0, 91), rgb(0, 0, 50));
+      border: none;
+      border-radius: 20px;
+    }
+  .button:hover {
+      padding: 15px 25px;
+      font-size: 27px;
+      text-align: center;
+      color: white;
+      background-image: linear-gradient(to right, blue, rgb(0, 0, 91), rgb(0, 0, 50));
+      border: none;
+      border-radius: 30px;
+      box-shadow: 0 4px grey;
+    }
+    .button:hover ~.poly{
+      fill:rgb(255, 255, 255);
+  }
+    .graphclass:hover {
+      background-image: linear-gradient(to right, rgb(226, 226, 255), rgb(142, 142, 252), rgb(226, 226, 255));
+      border-radius: 30px;
+    }

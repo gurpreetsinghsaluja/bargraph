@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Tangerine:wght@700&display=swap" rel="stylesheet">
+  <title>Gurpreet's WebTech Project</title>
+  <!-- linking css file to the html file   -->
+  <link href="./public/mySPA.css" rel="stylesheet">
+</head>
+<!-- linking d3 script to the html file   -->
+<script src="https://d3js.org/d3.v7.js"></script>
+
+<body>
+  <h1>
+    Relative Purchase Price Comparison of Transportation Mediums</h1>
+  <a href="https://publish.uwo.ca/~jmorey2/ece/d3/d3Easy4.html">Reference URL</a>
+  <ul>
+
+    <button class="button" onclick="toggle()">Randomize Bar graph count</button>
+    <svg height="210" width="500">
+      <polygon class="poly" points="100,10 40,198 190,78 10,78 160,198" />
+      <!-- polygon star points reference: https://www.w3schools.com/graphics/tryit.asp?filename=trysvg_polygon3 -->
+      <path fill="none" stroke="purple" stroke-width="2" d="m25,1 6,17h18l-14,11 5,17-15-10-15,10 5-17-14-11h18z" />
+      <!-- Path points d Reference: https://commons.wikimedia.org/wiki/Polygon -->
+      <circle cx="100" cy="109" r="10" stroke="purple" stroke-width="30" fill="none" />
+      <rect height="210" width="200" stroke="purple" stroke-width="2" fill="none" rx="25" />
+      <text x="112" y="35" stroke="purple">SVG>JPG</text>
+
+    </svg>
+
+    <br> <br><span>
+      <li><b>Click</b> on the corresponding transport <b>emoji</b> to delete that particular bar in the bar graph.</li>
+      <li><b>Enter the mouse</b> on the corresponding bar to <b>increase its price</b> in the bar graph.</li>
+      <li><b>Click</b> on the corresponding bar to <b>decrease</b> its price in the bar graph.</li>
+      <li>This should be done in case you want to change the relative price.<br>The relative <b>position</b> of the bar
+        with respect to other bars also <b>updates</b> to case the count crosses other bar's count.</li>
+      <br>
+    </span>
+    <li>
+      <svg id="graph" class="graphclass"></svg>
+      <img class="image"
+        src="https://media-exp1.licdn.com/dms/image/C4E03AQHgEEXAWuoLKA/profile-displayphoto-shrink_800_800/0/1615729422289?e=1643846400&v=beta&t=WPofAd-43XJiikENSr5-motdrJ6EgxMjC1gdxBxe6FM"
+        width="480" height="480">
+    </li>
+  </ul>
+</body>
+<!-- linking script file to the html file   -->
+<script src="./public/script.js"></script>
+
+</html>
