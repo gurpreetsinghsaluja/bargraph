@@ -13,10 +13,12 @@ fetch('/upload').then(response => response.json()).then(d3Data => {
     let maxCount = d3.max(sales, (d, i) => d.count);
     x = d3.scaleLinear()
         .range([0, width])
+        //setting the domain of the bargraph
         .domain([0, 50])
     let xaxis = d3.axisTop().scale(x)
 
     y = d3.scaleBand()
+    //setting the range of the bargraph
         .range([0, height])
         .domain(sales.map((d, i) => d.emoji))
 
@@ -31,6 +33,7 @@ fetch('/upload').then(response => response.json()).then(d3Data => {
         .call(xaxis)
 
     color = d3.scaleSequential()
+    //setting the color inside the bars in the bar graph
         .domain([0, d3.max(sales, d => d.count)])
         .interpolator(d3.interpolateInferno)
 
@@ -45,6 +48,7 @@ let toggle = () => {
         //setting maximum count to 50, in case the random number makes count negative
         if (s.count > 50) s.count = 50;
     })
+    //update the values after the change in values above in toggle
     update(sales.filter(s => s.count != 0).sort((a, b) => b.count - a.count));
 }
 let update = data => {
@@ -67,7 +71,7 @@ let update = data => {
                     .attr('fill', d => `${color(d.count)}`)
                     .attr('height', y.bandwidth())
                     .attr('width', d => x(d.count))
-                    //defining index so as to use in functions like IncrementCount,DecreaseCount,deleteBar
+                    //defining index so as to use in functions IncrementCount,DecreaseCount
                     .attr('index',(d,i)=>i)
                     //increment bar value on mouseover
                     .on("mouseover", IncrementCount)
@@ -82,6 +86,7 @@ let update = data => {
                     .attr('transform', d => `translate(${x(0)},${y(d.emoji) + y.bandwidth() * 3 / 4}) scale(${y.bandwidth() / 20})`) //fudgy
                     .text(d => d.emoji)
                     .attr('stroke', "black")
+                    //defining index so as to use in function deleteBar
                     .attr('index',(d,i)=>i)
                     //delete the bar on emoji click
                     .on("click", deleteBar)
@@ -89,6 +94,7 @@ let update = data => {
             },
             update => {
                 let group = update.transition()
+                    //set update duration to be 1 second
                     .duration(1000)
                 group.select("rect")
                     .attr('width', d => x(d.count))
@@ -102,6 +108,7 @@ let update = data => {
                 },
             remove =>
                 remove.attr("opacity", 0.75)
+                    //make removal transition by making opacity to zero for 1 second duration
                     .transition()
                     .duration(1000)
                     .attr("opacity", 0)
@@ -109,16 +116,19 @@ let update = data => {
         )
 }
 function deleteBar(d) {
+    //set count to zero so as to enable deleting of that particular bar
     let index = this.getAttribute("index");
     sales[index].count=0;
     update(sales.filter(s => s.count != 0).sort((a, b) => b.count - a.count));
 }
 function IncrementCount(d) {
+    //increase count value in that particular bar by 1
     let index = this.getAttribute("index");
     sales[index].count++;
     update(sales.filter(s => s.count != 0).sort((a, b) => b.count - a.count));
 }
 function DecreaseCount(d) {
+    //decrease count value in that particular bar by 1
     let index = this.getAttribute("index");
     sales[index].count--;
     update(sales.filter(s => s.count != 0).sort((a, b) => b.count - a.count));
