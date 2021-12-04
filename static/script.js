@@ -124,7 +124,8 @@ function deleteBar(d) {
 function IncrementCount(d) {
     //increase count value in that particular bar by 1
     let index = this.getAttribute("index");
-    sales[index].count++;
+    if(sales[index].count<50)
+        sales[index].count++;
     update(sales.filter(s => s.count != 0).sort((a, b) => b.count - a.count));
 }
 function DecreaseCount(d) {

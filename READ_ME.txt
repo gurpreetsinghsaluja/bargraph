@@ -57,6 +57,6 @@
 36 -- static/script.js line 3,13,23,37,42,43,52,54,57,60,62,69,71,73,75,86,97,90,95 etc.
 37 In comments, show
 38 -- source link * critical for academic integrity as well as fixing things if you break them.
-39 -- static/mySPA.css line 5; static/index.html line 21,27,29; static/script.js line 4,5
-40 -- % use
-41 --static/mySPA.css line 4; static/index.html line 45,26,28; static/script.js line 13,59
+39 -- static/mySPA.css line 5; static/index.html line 21,27,29;
+40 -- % use (in brackets in next line)
+41 --static/mySPA.css line 4(100%use); static/index.html line 45(60%use),26(80%use),28(90%use);
