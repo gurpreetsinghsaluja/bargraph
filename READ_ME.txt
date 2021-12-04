@@ -3,17 +3,19 @@
 3 -- Name: Gurpreet Singh Saluja Email: gsaluja2@uwo.ca
 4 -- Project Check-list (this list filled in)
 5 -- a git log --all
-        commit 40ffba48ef2304f3e9c0221b1c55500f77167f71 (HEAD -> master)
+            commit a38782f89b8b3a5f5fd86c75eff0930cadd4cc59 (HEAD -> master)
     Author: Gurpreet_Singh Saluja <gsaluja2@uwo.ca>
-    Date:   Wed Dec 1 21:01:20 2021 -0500
+    Date:   Sat Dec 4 16:51:20 2021 -0500
 
-        Added d3, html elements, non svg and css features
-    dyn172-23-43-197:Final_Project gurpreet$ git add -A
-    dyn172-23-43-197:Final_Project gurpreet$ git commit -m "added comments"
-    [master d3db389] added comments
-    2 files changed, 21 insertions(+), 4 deletions(-)
-    dyn172-23-43-197:Final_Project gurpreet$ git log --all
-    commit d3db389e3f7c48b329653b460bdb40df54cbe036 (HEAD -> master)
+        Project done,Final commit
+
+    commit e09cf8dc30bc254fac3980ed106e53d8028792fc
+    Author: Gurpreet_Singh Saluja <gsaluja2@uwo.ca>
+    Date:   Wed Dec 1 22:30:57 2021 -0500
+
+        Readme file completed
+
+    commit d3db389e3f7c48b329653b460bdb40df54cbe036
     Author: Gurpreet_Singh Saluja <gsaluja2@uwo.ca>
     Date:   Wed Dec 1 21:31:51 2021 -0500
 
